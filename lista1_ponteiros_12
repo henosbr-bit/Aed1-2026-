@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+ int *inserir(int *v, int *n, int valor){
+     int *temp= realloc(v, (*n+1) * sizeof(int));
+     
+     v= temp;
+     v[*n] = valor;
+     (*n)++;
+     return v;
+ }
+ 
+int main (){
+    int *v= NULL;
+    int n=0;
+    
+      v = inserir(v, &n, 10);
+    v = inserir(v, &n, 20);
+    v = inserir(v, &n, 30);
+    v = inserir(v, &n, 40);
+     v = inserir(v, &n, 60);
+    
+    
+    for (int i = 0; i<n; i++) {
+        printf("%d ", v[i]);
+    }
+     printf("\nQuantidade: %d\n", n);
+
+    // libera memória
+    free(v);
+    
+    return 0;
+}

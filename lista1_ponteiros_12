@@ -26,7 +26,6 @@ int main (){
     }
      printf("\nQuantidade: %d\n", n);
 
-    // libera memória
     free(v);
     
     return 0;
